@@ -1,6 +1,6 @@
 # CRM---SENAC-RJ
 
-SCRIPT DE CRIAÇÂO DO BANCO 
+SCRIPT DE CRIAÇÃO DO BANCO 
 
 -- -----------------------------------------------------
 -- Schema `crm_senac` 
