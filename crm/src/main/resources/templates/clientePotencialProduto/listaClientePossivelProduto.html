@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Clientes</title>
+</head>
+<body>
+
+	<h1>Lista de Clientes</h1>
+	<h3>
+		<a href="/cadastraCliente">Cadastrar Cliente</a>
+	</h3>
+
+	<table>
+		<tbody>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Telefone</th>
+			</tr>
+			<tr th:each="cliente : ${clientes}">
+				<td><span th:text="${cliente.nome}"></span></td>
+				<td><span th:text="${cliente.email}"></span></td>
+				<td><span th:text="${cliente.email}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<a href="/inicio">Voltar</a>
+</body>
+</html>

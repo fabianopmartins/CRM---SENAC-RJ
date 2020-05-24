@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link href="/css/style2.css" rel="stylesheet">
+</head>
+<body>
+	<div id="formAcaoUsuarioClienteOfertaModal" class="modal fade"
+		role="dialog" th:fragment="formAcaoUsuarioClienteOferta" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" style="background: #093159;">
+					<h4 class="modal-title">
+						<span style="font-weight: bold; color: white;">Cadastrar
+							Ação Usuário Oferta</span>
+					</h4>
+				</div>
+
+				<form th:action="@{/salvaAcaoUsuarioClienteOferta}" method="post"
+					th:object="${acaoUsuarioClienteOferta}"
+					id="form-acaoUsuarioClienteOferta-form">
+
+					<!-- Input values -->
+					<div class="modal-body container col-md-8">
+						<div class="form-row">
+							<div class="col">
+								<div class="form-group col-md-12 mt-3" hidden>
+									<label id="inputAcaoUsuarioClienteOfertaData-label"><input
+										class="form-control" id="inputAcaoUsuarioClienteOfertaData"
+										name="data"
+										th:value="*{#dates.format(#dates.createNow(), 'yyyy/MM/dd')}"
+										required="required" /></label>
+								</div>
+								<div>
+									<span th:objectr="${clienteOferta}"></span>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-12 mt-3">
+										<label id="inputAcaoUsuarioClienteOfertaClienteOferta-label"><select
+											class="form-control"
+											id="inputAcaoUsuarioClienteOfertaClienteOferta"
+											th:field="*{clienteOferta}" >
+												<option th:each="clienteOferta: ${clienteOfertas}"
+													th:if="${clienteOferta.cliente.id == 1}"
+													th:value="${clienteOferta.cliente.id}"
+													th:text="${clienteOferta.oferta.descricao}" />
+										</select></label>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6 mt-3">
+										<label id="inputAcaoUsuarioClienteOfertaAcao-label"><select
+											class="form-control" id="inputAcaoUsuarioClienteOfertaAcao"
+											th:field="*{acao}">
+												<option value="">Ação</option>
+												<option th:each="acao: ${acoes}" th:value="${acao.id}"
+													th:text="${acao.descricao}" />
+										</select></label>
+									</div>
+									<div class="form-group col-md-6 mt-3">
+										<label id="inputAcaoUsuarioClienteOfertaUsuario-label"><select
+											class="form-control"
+											id="inputAcaoUsuarioClienteOfertaUsuario"
+											th:field="*{usuario}">
+												<option value="">Usuário</option>
+												<option th:each="usuario: ${usuarios}"
+													th:value="${usuario.id}"
+													th:text="${usuario.nome}" />
+										</select></label>
+									</div>
+								</div>
+
+								<div class="form-group col-md-12 mt-3">
+									<label id="inputAcaoUsuarioClienteOfertaDescricao-label"><textarea
+											type="text"
+											th:field="*{descricao}"
+											id="inputAcaoUsuarioClienteOfertaDescricao"
+											class="form-control" required="required" rows="7"
+											style="resize: none" placeholder="Descrição"></textarea></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- buttons -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link href="/css/style2.css" rel="stylesheet">
+</head>
+<div id="alteraClienteModal" class="modal fade" role="dialog"
+	th:fragment="alteraCliente" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header" style="background: #093159;">
+				<h4 class="modal-title">
+					<span style="font-weight: bold; color: white;">Alterar
+						Cliente</span>
+				</h4>
+			</div>
+
+			<form th:action="@{/alteraCliente}" method="post"
+				th:object="${cliente}" id="altera-cliente-form">
+
+				<!-- Input values -->
+				<div class="modal-body container col-md-8">
+					<div class="form-group">
+						<label>ID</label> <input type="text" th:field="*{id}"
+							id="inputClienteId" class="form-control col-sm-3" readonly="readonly"
+							required="required" />
+					</div>
+					<div class="form-group mt-3">
+						<label>CPF</label><input type="text" th:field="*{cpf}"
+							name="cpf" class="form-control" required="required" />
+					</div>
+					<div class="form-group mt-3">
+						<label>Nome</label><input type="text" th:field="*{nome}"
+							name="nome" class="form-control" required="required" />
+					</div>
+					<div class="form-group mt-3">
+						<label>Sobrenome</label><input type="text"
+							th:field="*{sobrenome}" name="sobrenome"
+							class="form-control" required="required" />
+					</div>
+					<div class="form-group mt-3">
+						<label>E-mail</label><input type="email"
+							th:field="*{email}" name="email"
+							class="form-control" required="required" />
+					</div>
+					<div class="form-group mt-3">
+						<label>Telefone</label><input type="text"
+							th:field="*{telefone}" name="telefone"
+							class="form-control" required="required" />
+					</div>
+					<div class="form-group col-md-6 mt-3">
+						<label>Status</label> <select class="form-control"
+								id="inputStatus" th:field="*{status}"
+								required="required">
+								<option value="">Selecione</option>
+								<option th:each="status : ${status}" th:value="${status.id}"
+									th:text="${status.descricao}"></option>
+							</select>
+					</div>
+				</div>
+
+				<!-- buttons -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-primary">Salvar</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+</html>

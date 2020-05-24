@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Senac</title>
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link href="/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.datatables.net/1.10.20/css/dataTables.jqueryui.min.css"
+	rel="stylesheet">
+<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		 
+		<ul th:replace="~{fragments/sidebarFooter :: ul}"></ul>
+		 
+		<!-- End of Sidebar -->
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!-- Topbar -->
+				
+				<nav th:replace="~{fragments/topbar}"></nav>
+				
+				<!-- End of Topbar -->
+
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+
+					<!-- Page Heading -->
+					<div
+						class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h1 class="h3 mb-2 text-gray-800 tab">Ofertas</h1>
+						<a href="http://localhost:8080/cadastraOferta"
+							class="d-none d-sm-inline-block btn btn-sm btn-primary d-btn"><i
+							class="fa-sm text-white-50"></i>Cadastrar Oferta</a>
+					</div>
+
+					<!-- DataTales Example -->
+					<div class="card mb-4 text-center">
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered" id="dataTable" width="100%"
+									cellspacing="0">
+									<thead>
+										<tr>
+											<th class="align-middle">Descrição</th>
+											<th class="align-middle">Data Início</th>
+											<th class="align-middle">Data Fim</th>
+											<th class="align-middle">Valor</th>
+											<th class="align-middle">Produto</th>
+											<th class="align-middle">Status</th>
+											<th class="align-middle">Editar</th>
+											<th class="align-middle">Visualizar</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<th class="align-middle">Descrição</th>
+											<th class="align-middle">Data Início</th>
+											<th class="align-middle">Data Fim</th>
+											<th class="align-middle">Valor</th>
+											<th class="align-middle">Produto</th>
+											<th class="align-middle">Status</th>
+											<th class="align-middle">Editar</th>
+											<th class="align-middle">Visualizar</th>
+										</tr>
+									</tfoot>
+									<tbody>
+										<tr th:each="oferta : ${ofertas}">
+											<td class="align-middle"><span
+												th:text="${oferta.descricao}"></span></td>
+											<td class="align-middle"><span
+												th:text="${#dates.format(oferta.dataInicio, 'dd/MM/yyyy')}"></span></td>
+											<td class="align-middle"><span
+												th:text="${#dates.format(oferta.dataFim, 'dd/MM/yyyy')}"></span></td>
+											<td class="align-middle"><span
+												th:text="${#numbers.formatCurrency(oferta.preco)}"></span></td>
+											<td class="align-middle"><span
+												th:text="${oferta.produto.nome}"></span></td>
+											<td class="align-middle"><span
+												th:text="${oferta.status.descricao}"></span></td>
+											<td class="align-middle"><a
+												class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+												href="#"
+												th:onclick="'javascript:abreAlteraOfertaModal(\''+ ${oferta.id} + '\');'">
+													<i class="fas fa-pencil-alt"></i>
+											</a></td>
+											<td class="align-middle"><a
+												class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+												href="#"
+												th:onclick="'javascript:abreVisualizaOfertaModal(\''+ ${oferta.id} + '\');'">
+													<i class="fas fa-eye"></i>
+											</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- End of Main Content -->
+
+			<!-- Footer -->
+				
+			<footer th:insert="~{fragments/sidebarFooter :: footer}"></footer>
+
+			<!-- End of Footer -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- modal -->
+	<div th:fragment="alteraOferta" id="alteraOfertaModalHolder"></div>
+	<div th:fragment="visualizaOferta" id="visualizaOfertaModalHolder"></div>
+
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
+
+	<!-- Page level plugins -->
+	<script src="vendor/chart.js/Chart.min.js"></script>
+
+	<!-- Page level custom scripts -->
+	<script src="js/demo/chart-area-demo.js"></script>
+	<script src="js/demo/chart-pie-demo.js"></script>
+
+	<!-- Page level plugins -->
+	<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+	<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+	<!-- Page level custom scripts -->
+	<script src="js/demo/datatables-demo.js"></script>
+
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdn.datatables.net/1.10.20/js/dataTables.jqueryui.min.js"></script>
+
+</body>
+</html>

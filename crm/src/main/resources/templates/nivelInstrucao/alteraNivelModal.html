@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="/css/style2.css" rel="stylesheet">
+</head>
+<body>
+	<div id="alteraNivelModal" class="modal fade" role="dialog"
+		th:fragment="alteraNivel" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" style="background: #093159;">
+					<h4 class="modal-title">
+						<span style="font-weight: bold; color: white;">Alterar
+							Nível de Instrução</span>
+					</h4>
+				</div>
+
+				<form th:action="@{/alteraNivel}" method="post" th:object="${nivel}"
+					id="altera-nivel-form">
+
+					<!-- Input values -->
+					<div class="modal-body container col-md-8">
+						<div class="form-group">
+							<label>ID</label> <input type="text" th:field="*{id}" id="inputNivelInstrucaoId"
+								class="form-control col-sm-3" readonly="readonly"
+								required="required" />
+						</div>
+							<div class="form-group col-md-10 mt-3">
+								<label>Descrição</label><input type="text"
+									th:field="*{descricao}"
+									name="descricao" class="form-control"
+									required="required" />
+							</div>
+							<div class="form-group col-md-6 mt-3">
+								<label>Status</label> <select class="form-control"
+								id="inputStatus" th:field="*{status}"
+								required="required">
+								<option value="">Selecione</option>
+								<option th:each="status : ${status}" th:value="${status.id}"
+									th:text="${status.descricao}"></option>
+							</select>
+							</div>
+					</div>
+
+					<!-- buttons -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.js"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
+</body>
+</html>

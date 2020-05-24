@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+</head>
+
+<body>
+
+	<ul
+		class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+		id="accordionSidebar">
+
+		<!-- Sidebar - Brand -->
+		<a
+			class="sidebar-brand d-flex align-items-center justify-content-center mt-3 mb-3"
+			href="/inicio">
+			<div id="logo">
+				<img src="/img/logo.png" />
+			</div>
+		</a>
+
+		<!-- Divider -->
+		<hr class="sidebar-divider my-0">
+
+		<!-- Nav Item - Dashboard -->
+		<li class="nav-item active"><a class="nav-link" href="/inicio">
+				<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
+		</a></li>
+
+		<!-- Divider -->
+		<hr class="sidebar-divider">
+
+		<!-- Heading -->
+		<div class="sidebar-heading">Interface</div>
+
+		<!-- Nav Item - Pages Collapse Menu -->
+		<li class="nav-item"><a class="nav-link collapsed" href="#"
+			data-toggle="collapse" data-target="#collapseTwo"
+			aria-expanded="true" aria-controls="collapseTwo"> <i
+				class="fas fa-fw fa-cog"></i> <span>Cadastros</span>
+		</a>
+			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+				data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<a class="collapse-item"
+						href="http://localhost:8080/cadastraProduto">Produto</a><a
+						class="collapse-item" href="http://localhost:8080/cadastraOferta">Oferta</a><a
+						class="collapse-item" href="http://localhost:8080/cadastraCliente">Cliente</a><a
+						class="collapse-item"
+						href="http://localhost:8080/cadastraClienteOferta">Cliente
+						Oferta</a>
+				</div>
+			</div></li>
+
+		<!-- Nav Item - Utilities Collapse Menu -->
+		<li class="nav-item"><a class="nav-link collapsed" href="#"
+			data-toggle="collapse" data-target="#collapseUtilities"
+			aria-expanded="true" aria-controls="collapseUtilities"> <i
+				class="fas fa-fw fa-wrench"></i> <span>Configurações</span>
+		</a>
+			<div id="collapseUtilities" class="collapse"
+				aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<h6 class="collapse-header">Funcionalidades:</h6>
+					<a class="collapse-item" href="funcionalidades">Cadastros</a>
+				</div>
+			</div></li>
+
+		<!-- Divider -->
+		<hr class="sidebar-divider">
+
+		<!-- Nav Item - Pages Collapse Menu -->
+		<li class="nav-item"><a class="nav-link collapsed" href="#"
+			data-toggle="collapse" data-target="#collapsePages"
+			aria-expanded="true" aria-controls="collapsePages"> <i
+				class="fas fa-fw fa-table"></i> <span>Tabelas</span>
+		</a>
+			<div id="collapsePages" class="collapse"
+				aria-labelledby="headingPages" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<a class="collapse-item" href="http://localhost:8080/clientes">Clientes</a>
+					<a class="collapse-item"
+						href="http://localhost:8080/clientesOfertas">Clientes Ofertas</a>
+					<a class="collapse-item" href="http://localhost:8080/produtos">Produtos</a>
+					<a class="collapse-item" href="http://localhost:8080/ofertas">Ofertas</a>
+					<a class="collapse-item" href="http://localhost:8080/niveis">Niveis
+						de Instrução</a><a class="collapse-item"
+						href="http://localhost:8080/acoes">Ações</a> <a
+						class="collapse-item" href="http://localhost:8080/status">Status</a>
+				</div>
+			</div></li>
+
+		<!-- Divider -->
+		<hr class="sidebar-divider d-none d-md-block">
+
+	</ul>
+
+	<!-- Footer -->
+
+	<footer class="sticky-footer bg-white">
+		<div class="container my-auto">
+			<div class="copyright text-center my-auto">
+				<span>Copyright &copy; Senac 2020</span>
+			</div>
+		</div>
+	</footer>
+
+	<!-- End of Footer -->
+
+</body>
+
+</html>

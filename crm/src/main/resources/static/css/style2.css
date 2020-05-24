@@ -1,0 +1,275 @@
+#inputClienteId {
+	border: none;
+}
+
+#inputClienteCPF {
+	padding-right: 30px;
+}
+
+#inputClienteCPF-label {
+	position: relative;
+}
+
+#inputClienteCPF-label:before {
+	content: "\f15c";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 200px;
+}
+
+#inputClienteNome {
+	padding-right: 30px;
+}
+
+#inputClienteNome-label {
+	position: relative;
+}
+
+#inputClienteNome-label:before {
+	content: "\f007";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 200px;
+}
+
+#inputClienteSobrenome {
+	padding-right: 30px;
+}
+
+#inputClienteSobrenome-label {
+	position: relative;
+}
+
+#inputClienteSobrenome-label:before {
+	content: "\f007";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 200px;
+}
+
+#inputClienteEmail {
+	padding-right: 30px;
+}
+
+#inputClienteEmail-label {
+	position: relative;
+}
+
+#inputClienteEmail-label:before {
+	content: "\f0e0";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 200px;
+}
+
+#inputClienteTelefone {
+	padding-right: 30px;
+}
+
+#inputClienteTelefone-label {
+	position: relative;
+}
+
+#inputClienteTelefone-label:before {
+	content: "\f095";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 200px;
+}
+
+#inputOfertaId {
+	border: none;
+}
+
+#inputOfertaDescricao {
+	padding-right: 30px;
+}
+
+#inputOfertaDescricao-label {
+	position: relative;
+}
+
+#inputOfertaDescricao-label:before {
+	content: "\f03a";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputOfertaDataInicio {
+	padding-right: 30px;
+}
+
+#inputOfertaDataInicio-label {
+	position: relative;
+}
+
+#inputOfertaDataInicio-label:before {
+	content: "\f073";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputOfertaDataFim {
+	padding-right: 30px;
+}
+
+#inputOfertaDataFim-label {
+	position: relative;
+}
+
+#inputOfertaDataFim-label:before {
+	content: "\f073";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputOfertaProduto {
+	padding-right: 30px;
+}
+
+#inputOfertaProduto-label {
+	position: relative;
+}
+
+#inputOfertaProduto-label:before {
+	content: "\f1c0";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputOfertaPreco {
+	padding-right: 30px;
+}
+
+#inputOfertaPreco-label {
+	position: relative;
+}
+
+#inputOfertaPreco-label:before {
+	content: "\f155";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputProdutoId {
+	border: none;
+}
+
+#inputProdutoNome {
+	padding-right: 30px;
+}
+
+#inputProdutoNome-label {
+	position: relative;
+}
+
+#inputProdutoNome-label:before {
+	content: "\f007";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputProdutoDescricao {
+	padding-right: 30px;
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	resize: none
+}
+
+#inputProdutoDescricao-label {
+	position: relative;
+}
+
+#inputProdutoDescricao-label:before {
+	content: "\f022";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputProdutoNivel {
+	padding-right: 30px;
+}
+
+#inputProdutoNivel-label {
+	position: relative;
+}
+
+#inputProdutoNivel-label:before {
+	content: "\f1c0";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 190px;
+}
+
+#inputProdutoStatus {
+	padding-right: 30px;
+}
+
+
+#inputProdutoStatus-label {
+	position: relative;
+}
+
+#inputProdutoStatus-label:before {
+	content: "\f1c0";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	left: 70px;
+}
+
+#inputAcaoId {
+	border: none;
+}
+
+#inputStatusId {
+	border: none;
+}
+
+#inputNivelInstrucaoId {
+	border: none;
+}
+
+label {
+	font-weight: bold;
+	text-color: gray;
+}
+
+.form-control {
+	border: none;
+	border-bottom: 1px solid;
+}
+
+.form-group {
+	margin: 0 auto;
+}
+
+input:focus::placeholder{
+       color: black;
+}
+
+textarea:focus::placeholder{
+       color: black;
+}

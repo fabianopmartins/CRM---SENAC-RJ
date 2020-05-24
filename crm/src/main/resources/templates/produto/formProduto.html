@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Senac</title>
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link href="/font-awesome-4.7.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style1.css">
+<link href="/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+
+		<ul th:replace="~{fragments/sidebarFooter :: ul}"></ul>
+
+		<!-- End of Sidebar -->
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!-- Topbar -->
+
+				<nav th:replace="~{fragments/topbar}"></nav>
+
+				<!-- End Topbar -->
+
+				<div class="container">
+
+					<!-- Content Row -->
+					<div class="row">
+
+						<div class="card-body mt-5 col-md-5">
+							<div class="card mb-4 text-center">
+								<h1 class="card-title h3 mt-4 mb-2 text-gray-800">Cadastrar
+									Produto</h1>
+								<hr>
+								<div class="container">
+									<form class="form-group" method="post" th:object="${produto}"
+										th:action="@{/salvaProduto}">
+										<div id="success"
+											class="mdl-list__item mt-2 alert alert-success"
+											th:if="${msg_resultado}">
+											<p id="p-mensagem-sucesso" class="sucesso-msg"
+												th:text="${msg_resultado}">...</p>
+										</div>
+										<div class="form-row">
+											<div class="col">
+												<div class="form-row">
+													<div class="form-group col-md-7 mt-3">
+														<label id="inputProdutoNome-label"><input
+															class="form-control" id="inputProdutoNome"
+															placeholder="Nome" type="text" value=""
+															th:field="*{nome}" required="required" /></label>
+													</div>
+												</div>
+												<div class="form-row">
+													<div class="form-group col-md-7 mt-3">
+														<label id="inputProdutoNivel-label"><select
+															class="form-control" id="inputProdutoNivel"
+															th:field="*{nivelInstrucao}" style="width: 215px;">
+																<option value="">Nível de Instrução</option>
+																<option th:each="nivel: ${niveis}"
+																	th:value="${nivel.id}"
+																	th:text="${nivel.descricao}" />
+														</select></label>
+													</div>
+												</div>
+												<div class="form-row">
+													<div class="form-group col-md-7 mt-3">
+														<label id="inputProdutoDescricao-label"><textarea
+																class="form-control" id="inputProdutoDescricao"
+																placeholder="Descrição" rows="5"
+																th:field="*{descricao}" required="required"></textarea></label>
+													</div>
+												</div>
+												<div class="form-row" hidden>
+													<div class="form-group col-md-7 mt-3">
+														<label id="inputProdutoStatus-label"><select
+															class="form-control" id="inputProdutoStatus"
+															th:field="*{status}">
+																<option value="2"></option>
+														</select></label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group col-md-12 mt-3 mb-4">
+												<button type="submit"
+													class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+													id="salvar">Salvar</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End of row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- End of Main Content -->
+			<!-- Footer -->
+			<footer th:insert="~{fragments/sidebarFooter :: footer}"></footer>
+			<!-- End of Footer -->
+		</div>
+		<!-- End of Content Wrapper -->
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+
+	<!-- Core plugin JavaScript-->
+	<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="/js/sb-admin-2.min.js"></script>
+
+</body>
+</html>

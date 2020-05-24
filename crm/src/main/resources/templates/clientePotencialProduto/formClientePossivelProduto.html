@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Cliente</title>
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<h1>Cadastro de Clientes</h1>
+	<h3>
+		<a href="/clientes">Listar Clientes</a>
+	</h3>
+
+	<form method="post">
+		Nome: <input type="text" value="" name="nome" required="required" />
+		Email: <input type="text" value="" name="email" required="required" />
+		Telefone: <input type="text" value="" name="telefone"
+			required="required" />
+
+		<button type="submit">Salvar</button>
+	</form>
+	<a href="/inicio">Voltar</a>
+</body>
+</html>
